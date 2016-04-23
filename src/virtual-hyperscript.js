@@ -37,7 +37,9 @@ function h(tagName, properties, children) {
 
     // stylematic inline styles
     if (props.hasOwnProperty('style')) {
-      props.style = stylematic(props.style).passthrough;
+      var styleResult = stylematic(props.style);
+      props.style = styleResult.passthrough;
+      props.className = (props.className || '') + ' ' + styleResult.className;
     }
 
     // support namespace
