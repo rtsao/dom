@@ -1,6 +1,8 @@
 /* eslint-disable */
 var isArray = require('x-is-array');
 
+var stylematic = require('stylematic');
+
 var VNode = require('virtual-dom/vnode/vnode.js');
 var VText = require('virtual-dom/vnode/vtext.js');
 var isVNode = require('virtual-dom/vnode/is-vnode');
@@ -31,6 +33,11 @@ function h(tagName, properties, children) {
     if (props.hasOwnProperty('key')) {
       key = props.key;
       props.key = undefined;
+    }
+
+    // stylematic inline styles
+    if (props.hasOwnProperty('style')) {
+      props.style = stylematic(props.style).passthrough;
     }
 
     // support namespace
