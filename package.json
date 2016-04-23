@@ -1,5 +1,5 @@
 {
-  "name": "@cycle/dom",
+  "name": "@rtsao/cycle-dom-stylematic",
   "version": "9.4.0",
   "author": "Andre Staltz",
   "description": "The standard DOM Driver for Cycle.js, based on virtual-dom, and other helpers",
